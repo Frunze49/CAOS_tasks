@@ -1,0 +1,16 @@
+<html><head><meta charset="utf-8"/></head>
+<body><h3>Problem kr03-t4: tests/kr3/yabloko-4</h3>
+<p> Выберите все строки кода, при выполнении которых процессор переключится из кольца 0 в кольцо 3: </p>
+<p> 1) <a href="https://github.com/hse-cs-ami/yabloko-public/blob/main/cpu/swtch.S#L13">cpu/swtch.S:13</a>  “mov %ecx, %esp” </p>
+<p> 2) <a href="https://github.com/hse-cs-ami/yabloko-public/blob/main/user/false.c#L2">user/false.c:2</a>  “return 1;” </p>
+<p> 3) <a href="https://github.com/hse-cs-ami/yabloko-public/blob/main/cpu/vectors.S#L27">cpu/vectors.S:27</a>  “iret” </p>
+<p> 4) <a href="https://github.com/hse-cs-ami/yabloko-public/blob/main/user/div0.c#L3">user/div0.c:3</a>  “x /= 0;” </p>
+<p> 5) <a href="https://github.com/hse-cs-ami/yabloko-public/blob/main/cpu/gdt.c#L51">cpu/gdt.c:51</a>  “lgdt gdt_desc” </p>
+<p> 6) <a href="https://github.com/hse-cs-ami/yabloko-public/blob/main/cpu/idt.c#L165">cpu/idt.c:165</a>  “lidt idt_reg” </p>
+<p> 7) <a href="https://github.com/hse-cs-ami/yabloko-public/blob/main/cpu/idt.c#L173">cpu/idt.c:173</a>  “cli” </p>
+<p> 8) <a href="https://github.com/hse-cs-ami/yabloko-public/blob/main/user/crt.c#L6">user/crt.c:6</a>  “int $0x84” </p>
+<h3>Notes</h3>
+<p>ВАЖНО! Строки учитываются только в контексте того кода где они расположены!</p>
+<p>Внимание! Выпишите номера ответов через пробел в произвольном порядке.</p>
+<p>Если вы считаете что верны ответы 1, 3 и 5 то введите 1 3 5</p>
+<p> </p></body></html>
