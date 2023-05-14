@@ -1,19 +1,27 @@
 #include "stdio.h"
+#include <stddef.h>
 
-enum { FULL_ACCESS = 4095 };
+enum {
+    FULL_ACCESS = 4095,
+    TEN = 10,
+    NINE = 9,
+    SEVEN = 7,
+    EIGHT = 8,
+    ELEVEN = 11,
+    FIVE = 5
+};
 
 const char *perms_to_str(char *buf, size_t size, int perms) {
     if (size == 0) {
-        buf[0] = '\0';
         return buf;
     } else {
         int full_access = FULL_ACCESS;
         perms &= full_access;
     }
-    char tmp_buf[10];
+    char tmp_buf[TEN];
     int i = 0;
-    while (i + 1 < 10) {
-        if (perms & (1 << (10 - i - 2))) {
+    while (i + 1 < TEN) {
+        if (perms & (1 << (TEN - i - 2))) {
             if (i % 3 == 0) {
                 tmp_buf[i] = 'r';
             } else if (i % 3 == 1) {
@@ -27,16 +35,18 @@ const char *perms_to_str(char *buf, size_t size, int perms) {
         }
         ++i;
     }
+    if (perms & (1 << NINE) && tmp_buf[EIGHT] != '-' && tmp_buf[SEVEN] != '-') {
+        tmp_buf[EIGHT] = 't';
+    }
+    if (perms & (1 << TEN) && tmp_buf[EIGHT] != '-') {
+        tmp_buf[FIVE] = 's';
+    }
+    if (perms & (1 << ELEVEN) &&
+        (tmp_buf[FIVE] != '-' || tmp_buf[EIGHT] != '-')) {
+        tmp_buf[2] = 's';
+    }
 
     tmp_buf[i] = '\0';
     snprintf(buf, size, "%s", tmp_buf);
     return buf;
-}
-
-int main() {
-    char buf[16];
-    for (int i = 0; i < 07777; ++i) {
-        printf("%s\n", perms_to_str(buf, sizeof(buf), i));
-    }
-    return 0;
 }

@@ -1,0 +1,4 @@
+Connect localhost 2235
+Send message
+Recv
+
