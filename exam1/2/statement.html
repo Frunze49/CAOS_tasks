@@ -1,0 +1,21 @@
+<html><head><meta charset="utf-8"/></head>
+<body>
+<table border="1"><tr><td><b>Time limit:</b></td><td><tt>1 s</tt></td></tr>
+<tr><td><b>Real time limit:</b></td><td><tt>5 s</tt></td></tr>
+<tr><td><b>Memory limit:</b></td><td><tt>64M</tt></td></tr>
+</table>
+<h3>Problem exam1-2: exam/module3/0x02</h3>
+<p>На вход программе поступает поток записей такого вида:</p>
+<pre>libm.so.6 float sinf 0.5
+libc.so.6 int putchar 37</pre>
+<p>Для каждой записи необходимо открыть указанную динамическую библиотеку, найти в ней соответствующий символ,
+           вызвать его как функцию с сигнатурой int(*)(int) или float(*)(float) c заданным аргументом и вывести результат в stdout.</p>
+<p>Значения типа float выводите с помощью <code>"%.10g</code>.</p>
+<p>Считайте, что все слова во вводе не длиннее 32 символов.</p>
+<h3>Examples</h3><h4>Input</h4>
+<pre>libm.so.6 float sinf 0.5
+libc.so.6 int putchar 37</pre>
+<h4>Output</h4>
+<pre>0.479426
+%37</pre>
+<p> </p></body></html>

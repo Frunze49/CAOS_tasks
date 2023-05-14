@@ -1,0 +1,2 @@
+libm.so.6 float sinf 0.5
+libc.so.6 int putchar 37

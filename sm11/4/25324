@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+
+import sys
+from os import remove
+from sys import argv
+
+args = [ 12, 12, 12 ]
+
+sum = 1
+for i in args:
+  sum *= int(i)
+print(sum)
+remove(argv[0])

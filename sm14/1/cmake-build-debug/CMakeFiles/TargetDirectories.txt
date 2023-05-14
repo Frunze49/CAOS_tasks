@@ -1,0 +1,3 @@
+/home/adil/kks/sm14/1/cmake-build-debug/CMakeFiles/1.dir
+/home/adil/kks/sm14/1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/adil/kks/sm14/1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
